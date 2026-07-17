@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+==================================================
+
+LeetCode : 1768. Merge Strings Alternately
+
+Topic       : String, Two Pointers
+Difficulty  : Easy
+
+Approach    : Brute Force
+
+Time Complexity  : O(n + m)
+Space Complexity : O(n + m)
+
+Solved On : 17-07-2026
+
+Revision
+---------
+[ ] Better Approach
+[ ] Optimal Approach
+
+Pattern:
+String Traversal
+
+==================================================
+*/
+
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+
+        string ans = "";
+
+        int i = 0;
+        int j = 0;
+
+        while (i < word1.size() && j < word2.size()) {
+            ans += word1[i++];
+            ans += word2[j++];
+        }
+
+        while (i < word1.size()) {
+            ans += word1[i++];
+        }
+
+        while (j < word2.size()) {
+            ans += word2[j++];
+        }
+
+        return ans;
+    }
+};
